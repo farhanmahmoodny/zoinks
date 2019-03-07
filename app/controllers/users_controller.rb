@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :authorized, only: [:index]
+  skip_before_action :authorized, only: [:index, :new, :create]
 
   def sale
     @sale = Sale.new

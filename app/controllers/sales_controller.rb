@@ -10,6 +10,7 @@ class SalesController < ApplicationController
 
   def create
     @sale = Car.create(sale_params)
+    @sale[:rent_price] = @sale.rent_price
     redirect_to sale_path(@sale)
   end
 
