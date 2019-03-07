@@ -16,9 +16,10 @@ class RentalsController < ApplicationController
 
   def create
     @rental = Rental.create(rental_params)
+    # byebug
     @car = @rental.car
     @car.update(available: false)
-    redirect_to rental_path
+    redirect_to rental_path(@rental)
   end
 
   def edit
@@ -35,6 +36,6 @@ class RentalsController < ApplicationController
   private
 
   def rental_params
-    params.require(:rental).permit(:review, :pick_up, :drop_off, :total_price, :car_id, :user_id)
+    params[:rental].permit(:review, :pick_up, :drop_off, :total_price, :car_id, :user_id)
   end
 end

@@ -1,5 +1,5 @@
 class CarsController < ApplicationController
-  skip_before_action :authorized, only: [:index, :show]
+  skip_before_action :authorized, only: [:index]
   def index
     @cars = Car.all
   end
