@@ -7,7 +7,7 @@ class CreateSales < ActiveRecord::Migration[5.2]
       t.string :color
       t.integer :sale_price
       t.integer :rent_price
-      t.boolean :available
+      t.boolean :available, default: true
       t.string :image
       t.integer :user_id
       t.integer :car_id

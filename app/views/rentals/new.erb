@@ -13,13 +13,11 @@
 
     <%= form_for @rental do |f| %>
     <%= f.label :pick_up %>
-    <%= f.date_select :pick_up %><br>
+    <%= f.date_field :pick_up, class: 'datepicker' %><br>
     <%= f.label :drop_off %>
-    <%= f.date_select :drop_off %><br>
+    <%= f.date_field :drop_off, class: 'datepicker' %><br>
     <%= f.label :car_id %>
-    <%= f.collection_select :car_id, @cars, :id, :model %><br>
-    <%= f.label :user_id %>
-    <%= f.collection_select :user_id, @users, :id, :name %><br>
+    <%= f.collection_select :car_id, @cars, :id, :model, { prompt: "Choose a car" }, class: "browser-default" %><br>
     <%= f.submit %>
     <% end %>
 

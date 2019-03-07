@@ -27,7 +27,7 @@
        </div>
        <div class="card-action">
          <a><% if @car.available == true %>
-           <%= link_to “Rent Me”, new_rental_path(@car) %>
+           <%= link_to "Rent Me", new_rental_path(@car) %>
          <% end %></a>
          <a><% if current_user.username == "admin" %>
          <%= link_to "Edit", edit_car_path(@car) %>

@@ -10,7 +10,7 @@ class RentalsController < ApplicationController
 
   def new
     @rental = Rental.new
-    @users = User.all
+    @user = current_user
     @cars = Car.where(available: true)
   end
 
@@ -18,8 +18,7 @@ class RentalsController < ApplicationController
     @rental = Rental.create(rental_params)
     @car = @rental.car
     @car.update(available: false)
-    redirect_to rental_path(@rental)
-
+    redirect_to rental_path
   end
 
   def edit
@@ -30,7 +29,6 @@ class RentalsController < ApplicationController
     @rental = Rental.find(params[:id])
     @rental.review = params[:rental][:review]
     @rental.save
-    # byebug
     redirect_to cars_path
   end
 

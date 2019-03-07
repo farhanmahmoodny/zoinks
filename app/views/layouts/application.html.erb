@@ -14,6 +14,8 @@
     <div class="nav-wrapper indigo darken-4">
       <a href="" class="brand-logo">Zoinks</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><%= link_to "Rent", cars_path %></li>
+        <li><%= link_to "Sell", new_sale_path %></li>
         <li><a><% if logged_in? %>
           <%= link_to "Logout", logout_path, method: :delete %>
         <% else %>
