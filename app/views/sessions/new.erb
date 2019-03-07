@@ -1,11 +1,22 @@
-<h1>Login</h1>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
 
-<h3><%= flash[:notice] %></h3>
+    <h1>Login</h1>
 
-<%= form_tag login_path do %>
-  <%= label_tag :username %>
-  <%= text_field_tag :username %><br><br>
-  <%= label_tag :password %>
-  <%= password_field_tag :password %><br>
-  <%= submit_tag "Login" %>
-<% end %>
+    <h3><%= flash[:notice] %></h3>
+
+    <%= form_tag login_path do %>
+    <%= label_tag :username %>
+    <%= text_field_tag :username %><br><br>
+    <%= label_tag :password %>
+    <%= password_field_tag :password %><br>
+    <%= submit_tag "Login" %>
+    <% end %>
+
+  </body>
+</html>

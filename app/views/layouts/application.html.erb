@@ -7,9 +7,22 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   </head>
 
-  <body>
+  <body>  <nav>
+    <div class="nav-wrapper">
+      <a href="" class="brand-logo">Zoinks</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a><% if logged_in? %>
+          <%= link_to "Logout", logout_path, method: :delete %>
+        <% else %>
+          <%= link_to "Login", login_path %>
+        <% end %></a></li>
+      </ul>
+    </div>
+  </nav>
+
     <%= yield %>
   </body>
 </html>

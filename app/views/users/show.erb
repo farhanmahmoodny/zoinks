@@ -1,22 +1,33 @@
-<h1>Welcome <%= @user.name %>!</h1>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
 
-<h2>Address:</h2>
-<h2><%= @user.street %></h2>
-<h2><%= @user.city %>, <%= @user.state %> <%= @user.zip %></h2>
-<h2>Phone: <%= @user.phone %></h2>
+    <h1>Welcome <%= @user.name %>!</h1>
 
-<h3>Cars you have rented:</h3>
+    <h2>Address:</h2>
+    <h2><%= @user.street %></h2>
+    <h2><%= @user.city %>, <%= @user.state %> <%= @user.zip %></h2>
+    <h2>Phone: <%= @user.phone %></h2>
 
-<ul>
-  <% @user.rentals.each do |rent| %>
-    <li><%= link_to rent.car.make + " " + rent.car.model, car_path(rent.car) %><br>
-    </li>
-  <% end %>
-</ul>
-<%= link_to "Logout", logout_path, method: :delete %>
-<% if current_user.id == @user.id %>
-<%= link_to "Edit", edit_user_path(@user) %>
-<%= link_to "Delete Account", @user, method: :delete, data: {confirm: "Delete your account?"} %>
-<%= link_to "Rent A Car", cars_path%>
-<%= link_to "Sell Your Car", new_sale_path %>
-<% end %>
+    <h3>Cars you have rented:</h3>
+
+    <ul>
+      <% @user.rentals.each do |rent| %>
+      <li><%= link_to rent.car.make + " " + rent.car.model, car_path(rent.car) %><br>
+      </li>
+      <% end %>
+    </ul>
+    <%= link_to "Logout", logout_path, method: :delete %>
+    <% if current_user.id == @user.id %>
+    <%= link_to "Edit", edit_user_path(@user) %>
+    <%= link_to "Delete Account", @user, method: :delete, data: {confirm: "Delete your account?"} %>
+    <%= link_to "Rent A Car", cars_path%>
+    <%= link_to "Sell Your Car", new_sale_path %>
+    <% end %>
+
+  </body>
+</html>

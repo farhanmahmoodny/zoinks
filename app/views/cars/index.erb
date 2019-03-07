@@ -1,9 +1,20 @@
-<h1>Welcome to Zoinks Auto Rentals</h1>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
 
-<h2>Here are all our cars:</h2>
+    <h1>Welcome to Zoinks Auto Rentals</h1>
 
-<ul>
-  <% @cars.each do |car| %>
-    <li><%= link_to car.make + " " + car.model, car_path(car) %></li>
-  <% end %>
-</ul>
+    <h2>Here are all our cars:</h2>
+
+    <ul>
+      <% @cars.each do |car| %>
+      <li><%= link_to car.make + " " + car.model, car_path(car) %></li>
+      <% end %>
+    </ul>
+
+  </body>
+</html>
