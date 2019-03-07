@@ -12,15 +12,15 @@
 
   <body>
     <nav>
-    <div class="nav-wrapper blue darken-4">
-      <a href="<%= users_path %>" class="brand-logo">Zoinks</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a><%= link_to "Logout", logout_path, method: :delete %></a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">JavaScript</a></li>
-      </ul>
-    </div>
-  </nav>
+      <div class="nav-wrapper blue darken-4">
+        <a href="<%= users_path %>" class="brand-logo">Zoinks</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a><%= link_to "Logout", logout_path, method: :delete %></a></li>
+          <li><a href="badges.html">Components</a></li>
+          <li><a href="collapsible.html">JavaScript</a></li>
+        </ul>
+      </div>
+    </nav>
     <%= yield %>
   </body>
 </html>
