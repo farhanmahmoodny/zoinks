@@ -2,19 +2,39 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+      <style>
+        /* h1 {
+          align: center;
+        }
+        div {
+          padding: 20px;
+          align: center;
+        } */
+
+        #banana {
+          width: 90vw;
+          margin: auto;
+
+        }
+
+        .banana {
+          margin: 3vh 3vw;
+        }
+
+      </style>
   </head>
   <body>
 
     <h1>Welcome to Zoinks Auto Rentals</h1>
 
-    <h2>Here are all our cars:</h2>
+    <div id="banana">
 
-    <ul>
-      <% @cars.each do |car| %>
-      <li><%= link_to car.make + " " + car.model, car_path(car) %></li>
-      <% end %>
-    </ul>
+      <ul>
+        <% @cars.each do |car| %>
+        <%= link_to image_tag(car.logo, height: '120', width: '200'), car_path(car), :class => "banana"%>
+        <% end %>
+      </ul>
 
+    </div>
   </body>
 </html>

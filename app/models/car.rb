@@ -7,6 +7,8 @@ class Car < ApplicationRecord
   def r_p
     if self.rent_price == nil
       self.sale_price / 100
+    else
+      self.rent_price
     end
   end
 end

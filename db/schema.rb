@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_05_151039) do
+ActiveRecord::Schema.define(version: 2019_03_08_145750) do
 
   create_table "cars", force: :cascade do |t|
     t.string "make"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2019_03_05_151039) do
     t.datetime "updated_at", null: false
     t.boolean "available", default: true
     t.string "image"
+    t.string "logo"
   end
 
   create_table "rentals", force: :cascade do |t|
