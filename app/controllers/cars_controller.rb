@@ -14,6 +14,8 @@ class CarsController < ApplicationController
 
   def create
     @car = Car.create(car_params)
+    # @rent = @car.rent_price
+    # @rent.save
     redirect_to car_path(@car)
   end
 
