@@ -12,13 +12,14 @@
 
   <body>  <nav>
     <div class="nav-wrapper indigo darken-4">
-      <a href="" class="brand-logo">Zoinks</a>
+      <a href=<%= cars_path %> class="brand-logo">Zoinks</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
         <li><%= link_to "Home", cars_path %></li>
         <li><%= link_to "Rent", new_rental_path %></li>
         <li><%= link_to "Sell", new_sale_path %></li>
         <li><a><% if logged_in? %>
-          <%= link_to "Logout", logout_path, method: :delete %>
+          <li><%= link_to "Profile", user_path(current_user) %></li>
+          <li><%= link_to "Logout", logout_path, method: :delete %></li>
         <% else %>
           <%= link_to "Login", login_path %>
         <% end %></a></li>
